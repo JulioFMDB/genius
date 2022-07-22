@@ -7,9 +7,9 @@
 //#include <conio2.h>
 #include <windows.h>
 #include "conio.c"
-
+// sdfsldfhjdsh
 /***********************************************/
-/* DefiniÁ„o das Estruturas                    */
+/* Defini√ß√£o das Estruturas                    */
 /***********************************************/
 typedef struct jogo{
 	char cor;
@@ -23,7 +23,7 @@ typedef struct score{
 }PONTUACAO;
 
 /***********************************************/
-/* DefiniÁ„o das FunÁıes                       */
+/* Defini√ß√£o das Fun√ß√µes                       */
 /***********************************************/
 void cria_lista(LISTA** l);
 void cria_pontos(PONTUACAO** po);
@@ -46,20 +46,20 @@ int primeiro = 0;
 
 main(){
 	
-	system("title GENIUS - SUPER LEGAL"); //D· tÌtulo a tela
+	system("title GENIUS - SUPER LEGAL"); //D√° t√≠tulo a tela
     system("MODE con cols=75 lines=29"); //Redimensiona a tela	
-	setlocale(LC_ALL,"PORTUGUESE"); //troca a linguagem do programa para a padr„o do windows
+	setlocale(LC_ALL,"PORTUGUESE"); //troca a linguagem do programa para a padr√£o do windows
 	
-	int menu; //opÁ„o do menu
-	LISTA* l; // declaraÁ„o da estrutura principal
-	PONTUACAO* po; //declaraÁ„o da estrutura de pontuaÁ„o
+	int menu; //op√ß√£o do menu
+	LISTA* l; // declara√ß√£o da estrutura principal
+	PONTUACAO* po; //declara√ß√£o da estrutura de pontua√ß√£o
 	if(primeiro == 0){
-		cria_pontos(&po); //cria a lista de pontuaÁ„o
+		cria_pontos(&po); //cria a lista de pontua√ß√£o
 		primeiro++;
 	}
 	do{
 		printf("JOGO SUPERLEGAL GENIUS\n\n");
-		printf("1 - NOVO JOGO \n2 - PLACAR DE RECORDES \n3 - COMO JOGAR\n0 - SAIR DO JOGO \nDigite a opÁ„o desejada: ");
+		printf("1 - NOVO JOGO \n2 - PLACAR DE RECORDES \n3 - COMO JOGAR\n0 - SAIR DO JOGO \nDigite a op√ß√£o desejada: ");
 		scanf("%d",&menu);
 		
 		switch(menu){
@@ -73,15 +73,15 @@ main(){
 				recordes(po);
 			break;
 			case 3:
-				instrucoes(); //chama a funÁ„o para mostrar as instruÁıes
+				instrucoes(); //chama a fun√ß√£o para mostrar as instru√ß√µes
 			break;
 			case 0: //sair do jogo
 				system("cls");
 				printf("JOGO SENDO ENCERRADO! \nOBRIGADO POR JOGAR\n\n");
 			break;
-			default: //numero inv·lido
+			default: //numero inv√°lido
 				system("cls");
-				printf("NUMERO INV¡LIDO \nSELECIONE UMA OP«√O VALIDA");
+				printf("NUMERO INV√ÅLIDO \nSELECIONE UMA OP√á√ÉO VALIDA");
 		}
 	}while(menu != 0);
 }
@@ -101,14 +101,14 @@ void genius(LISTA** l,PONTUACAO** po){
 		
 	printf("INCIANDO O JOGO!\n\n");
 	do{
-		//CRIA«√O DE ORDEM COMPUTADOR
+		//CRIA√á√ÉO DE ORDEM COMPUTADOR
 		LISTA* no =  (LISTA *) malloc (sizeof(LISTA)); // aloca novo espaco em memoria
 		if( no != NULL ){ // verifica se conseguiu alocar memoria para o novo registro
 			gera_cor(no);
 			if(*l == NULL) // lista vazia
             	*l= no; // insere o primeiro registro
             else{
-                p = *l;                        // percorre a lista atÈ encontrar o ultimo registro
+                p = *l;                        // percorre a lista at√© encontrar o ultimo registro
                 while( p->prox != NULL )
                 	p = p->prox;
                 p->prox = no;                  // ultimo aponta para o novo registro
@@ -140,7 +140,7 @@ void genius(LISTA** l,PONTUACAO** po){
             p = p->prox;  // aponta para o proximo registro da lista
 		 }
 		
-		//JOGADA USU¡RIO E VERIFICA SE JOGADA ESTA CERTA AT… O FINAL DA LISTA
+		//JOGADA USU√ÅRIO E VERIFICA SE JOGADA ESTA CERTA AT√â O FINAL DA LISTA
 		p = *l;
 		while(p != NULL){
 			textbackground(BLACK);
@@ -155,7 +155,7 @@ void genius(LISTA** l,PONTUACAO** po){
 			}
 			else{
 				system("cls");
-				printf("Infelizmente vocÍ perdeu :/ \n\n\n");
+				printf("Infelizmente voc√™ perdeu :/ \n\n\n");
 				system("pause");				
 				salva_pontos(po,pontoatual);
 				system("cls");
@@ -204,7 +204,7 @@ void gera_cor(LISTA* aux){
 			aux->cor = 'D';
 		break;
 	}
-	aux->prox = NULL; // n„o aponta
+	aux->prox = NULL; // n√£o aponta
 }
 
 void salva_pontos(PONTUACAO** po,int pontoatual){
@@ -222,7 +222,7 @@ void salva_pontos(PONTUACAO** po,int pontoatual){
 			if(* po== NULL) // lista vazia
             	*po= np; // insere o primeiro registro
             else{
-                pp = *po;                        // percorre a lista atÈ encontrar o ultimo registro
+                pp = *po;                        // percorre a lista at√© encontrar o ultimo registro
                 while( pp->prox != NULL )
                 	pp = pp->prox;
                 pp->prox = np;                  // ultimo aponta para o novo registro
@@ -256,7 +256,7 @@ void desenha(void){
 	verde();
 	vermelho();
 	
-  	/*printxy(32, 2, "                "); //D  16 ESPA«OS ENTRE AS ASPAS
+  	/*printxy(32, 2, "                "); //D√ä 16 ESPA√áOS ENTRE AS ASPAS
   	printxy(32, 3, "                "); 
   	printxy(32, 4, "                ");   
  	printxy(32, 5, "                ");
@@ -266,14 +266,14 @@ void desenha(void){
 
 void instrucoes(void){
 	system("cls");
-	printf("INSTRU«’ES PARA JOGAR: \n");
-	printf("Cada cor corresponde a uma tecla do teclado [W, A, S, D], conforme ela est· disposta na tela de jogo, pressione as setas seguindo a mesma ordem do computador para fazer mais pontos!\n\n\n");
+	printf("INSTRU√á√ïES PARA JOGAR: \n");
+	printf("Cada cor corresponde a uma tecla do teclado [W, A, S, D], conforme ela est√° disposta na tela de jogo, pressione as setas seguindo a mesma ordem do computador para fazer mais pontos!\n\n\n");
 	system("pause");
 	system("cls");
 }
 
 void azul(void){
-	textbackground(BLUE);               //FUN«√O QUE PINTA DE AZUL
+	textbackground(BLUE);               //FUN√á√ÉO QUE PINTA DE AZUL
 	gotoxy(32,2);
 	printf("                ");
 	gotoxy(32,3);
@@ -289,7 +289,7 @@ void azul(void){
 }
 
 void piscaazul(void){
-	textbackground(LIGHTBLUE);               //FUN«√O QUE PISCA AZUL
+	textbackground(LIGHTBLUE);               //FUN√á√ÉO QUE PISCA AZUL
 	gotoxy(32,2);
 	printf("                ");
 	gotoxy(32,3);
@@ -307,7 +307,7 @@ void piscaazul(void){
 }
 
 void amarelo(void){
-	textbackground(BROWN);               //FUN«√O QUE PINTA DE AMARELO
+	textbackground(BROWN);               //FUN√á√ÉO QUE PINTA DE AMARELO
 	gotoxy(16,8);
 	printf("                ");
 	gotoxy(16,9);
@@ -323,7 +323,7 @@ void amarelo(void){
 }
 
 void piscaamarelo(void){
-	textbackground(YELLOW);               //FUN«√O QUE PISCA AMARELO
+	textbackground(YELLOW);               //FUN√á√ÉO QUE PISCA AMARELO
 	gotoxy(16,8);
 	printf("                ");
 	gotoxy(16,9);
@@ -341,7 +341,7 @@ void piscaamarelo(void){
 }
 
 void verde(void){
-	textbackground(GREEN);               //FUN«√O QUE PINTA DE VERDE
+	textbackground(GREEN);               //FUN√á√ÉO QUE PINTA DE VERDE
 	gotoxy(48,8);
 	printf("                ");
 	gotoxy(48,9);
@@ -357,7 +357,7 @@ void verde(void){
 }
 
 void piscaverde(void){
-	textbackground(LIGHTGREEN);               //FUN«√O QUE PISCA VERDE
+	textbackground(LIGHTGREEN);               //FUN√á√ÉO QUE PISCA VERDE
 	gotoxy(48,8);
 	printf("                ");
 	gotoxy(48,9);
@@ -375,7 +375,7 @@ void piscaverde(void){
 }
 
 void vermelho(void){
-	textbackground(RED);               //FUN«√O QUE PINTA DE VERMELHO
+	textbackground(RED);               //FUN√á√ÉO QUE PINTA DE VERMELHO
 	gotoxy(32,14);
 	printf("                ");
 	gotoxy(32,15);
@@ -391,7 +391,7 @@ void vermelho(void){
 }
 
 void piscavermelho(void){
-	textbackground(LIGHTRED);               //FUN«√O QUE PISCA VERMELHO
+	textbackground(LIGHTRED);               //FUN√á√ÉO QUE PISCA VERMELHO
 	gotoxy(32,14);
 	printf("                ");
 	gotoxy(32,15);
