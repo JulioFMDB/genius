@@ -7,7 +7,6 @@
 //#include <conio2.h>
 #include <windows.h>
 #include "conio.c"
-// sdfsldfhjdsh
 /***********************************************/
 /* Definição das Estruturas                    */
 /***********************************************/
